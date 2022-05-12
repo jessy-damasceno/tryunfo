@@ -10,7 +10,6 @@ import RareInput from './inputs/RareInput';
 import TrunfoInput from './inputs/TrunfoInput';
 import SaveButton from './buttons/SaveButton';
 
-
 export default class Form extends Component {
   render() {
     const { cardName, cardDescription, cardAttr1,
@@ -21,17 +20,44 @@ export default class Form extends Component {
     console.log(hasTrunfo);
 
     return (
-      <>
-        <NameInput />
-        <DescriptionInput />
-        <Attr1Input />
-        <Attr2Input />
-        <Attr3Input />
-        <ImageInput />
-        <RareInput />
-        <TrunfoInput />
-        <SaveButton />
-      </>
+      <form>
+        <NameInput
+          value={ cardName }
+          onChange={ onInputChange }
+        />
+        <DescriptionInput
+          value={ cardDescription }
+          onChange={ onInputChange }
+        />
+        <Attr1Input
+          value={ cardAttr1 }
+          onChange={ onInputChange }
+        />
+        <Attr2Input
+          value={ cardAttr2 }
+          onChange={ onInputChange }
+        />
+        <Attr3Input
+          value={ cardAttr3 }
+          onChange={ onInputChange }
+        />
+        <ImageInput
+          value={ cardImage }
+          onChange={ onInputChange }
+        />
+        <RareInput
+          value={ cardRare }
+          onChange={ onInputChange }
+        />
+        <TrunfoInput
+          checked={ cardTrunfo }
+          onChange={ onInputChange }
+        />
+        <SaveButton
+          disabled={ isSaveButtonDisabled }
+          onClick={ onSaveButtonClick }
+        />
+      </form>
     );
   }
 }
