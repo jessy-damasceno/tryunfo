@@ -1,7 +1,10 @@
 import React, { Component } from 'react';
+import PropTypes from 'prop-types';
 
 export default class Attr3Input extends Component {
   render() {
+    const { value, onChange } = this.props;
+
     return (
       <div className="container">
         <label htmlFor="attr3-input">
@@ -11,9 +14,16 @@ export default class Attr3Input extends Component {
             data-testid="attr3-input"
             name="attr3-input"
             id="attr3-input"
+            value={ value }
+            onChange={ onChange }
           />
         </label>
       </div>
     );
   }
 }
+
+Attr3Input.propTypes = {
+  value: PropTypes.string.isRequired,
+  onChange: PropTypes.func.isRequired,
+};
