@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 
 export default class SaveInput extends Component {
   render() {
-    const { disabled, onChange } = this.props;
+    const { disabled, onClick } = this.props;
 
     return (
       <button
@@ -11,7 +11,7 @@ export default class SaveInput extends Component {
         type="submit"
         id="save-button"
         disabled={ disabled }
-        onChange={ onChange }
+        onClick={ onClick }
       >
         Salvar
       </button>
@@ -21,5 +21,5 @@ export default class SaveInput extends Component {
 
 SaveInput.propTypes = {
   disabled: PropTypes.bool.isRequired,
-  onChange: PropTypes.func.isRequired,
+  onClick: PropTypes.func.isRequired,
 };
