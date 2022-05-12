@@ -4,6 +4,7 @@ import PropTypes from 'prop-types';
 export default class DescriptionInput extends Component {
   render() {
     const { value, onChange } = this.props;
+
     return (
       <div className="container">
         Descrição
