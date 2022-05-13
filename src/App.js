@@ -5,9 +5,9 @@ import Form from './components/Form';
 const INITIALSTATE = {
   cardName: '',
   cardDescription: '',
-  cardAttr1: '0',
-  cardAttr2: '0',
-  cardAttr3: '0',
+  cardAttr1: '',
+  cardAttr2: '',
+  cardAttr3: '',
   cardImage: '',
   cardRare: 'normal',
   cardTrunfo: false,
@@ -54,17 +54,17 @@ class App extends React.Component {
   }
 
   onSaveButtonClick = (event) => {
+    event.preventDefault();
     this.setState(() => ({
       cardName: '',
       cardDescription: '',
       cardImage: '',
-      cardAttr1: '0',
-      cardAttr2: '0',
-      cardAttr3: '0',
+      cardAttr1: 0,
+      cardAttr2: 0,
+      cardAttr3: 0,
       cardRare: 'normal',
     }
     ));
-    event.preventDefault();
   }
 
   render() {
@@ -77,6 +77,9 @@ class App extends React.Component {
           onSaveButtonClick={ this.onSaveButtonClick }
           cardName={ cardName }
           cardTrunfo={ cardTrunfo }
+          cardDescription={ cardDescription }
+          cardImage={ cardImage }
+          cardRare={ cardRare }
           isSaveButtonDisabled={ !isSaveButtonDisabled }
           cardAttr1={ cardAttr1 }
           cardAttr2={ cardAttr2 }

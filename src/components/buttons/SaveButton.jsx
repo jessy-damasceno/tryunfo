@@ -8,7 +8,7 @@ export default class SaveInput extends Component {
     return (
       <button
         data-testid="save-button"
-        type="button"
+        type="submit"
         id="save-button"
         disabled={ disabled }
         onClick={ onClick }
