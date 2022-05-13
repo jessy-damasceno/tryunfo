@@ -93,3 +93,27 @@ textarea {
   background: #023031;
   border-radius: 4px 0 0 4px;
 }
+
+#trunfo-input {
+  width: 36px;
+}
+
+#save-button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 12px 40px;
+  color: #fff;
+  background: royalblue;
+  border: none;
+  border-radius: 4px;
+}
+
+#save-button:hover {
+  cursor: pointer;
+  background: rgba(65, 105, 225, 0.9);
+}
+
+#save-button:active {
+  background: rgba(65, 105, 225, 0.85);
+}

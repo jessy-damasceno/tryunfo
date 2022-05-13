@@ -7,7 +7,7 @@ export default class TrunfoInput extends Component {
 
     return (
       <div className="container">
-        <label htmlFor="trunfo-input">
+        <label id="trunfo-input-label" htmlFor="trunfo-input">
           <input
             type="checkbox"
             data-testid="trunfo-input"
