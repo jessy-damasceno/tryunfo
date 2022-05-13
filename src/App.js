@@ -1,4 +1,5 @@
 import React from 'react';
+import DeleteButton from './components/buttons/DeleteButton';
 import Card from './components/Card';
 import Form from './components/Form';
 
@@ -81,6 +82,18 @@ class App extends React.Component {
     if (trunfo) { this.setState({ hasTrunfo: true }); }
   };
 
+  onDelete = (event) => {
+    const { name } = event.target;
+    this.setState(({ cardsDeck }) => ({
+      cardsDeck: cardsDeck.filter((card) => card.cardName !== name) }));
+
+    this.setState(({ cardsDeck }) => {
+      if (cardsDeck.every((card) => card.cardTrunfo !== true)) {
+        return { hasTrunfo: false };
+      }
+    });
+  }
+
   render() {
     const { cardName, cardDescription, cardAttr1, cardAttr2, cardAttr3,
       cardImage, cardRare, cardTrunfo,
@@ -113,18 +126,22 @@ class App extends React.Component {
             cardTrunfo={ cardTrunfo }
           />
         </div>
-        <div>
-          { cardsDeck.map((card, index) => (<Card
-            key={ index }
-            cardName={ card.cardName }
-            cardDescription={ card.cardDescription }
-            cardAttr1={ card.cardAttr1 }
-            cardAttr2={ card.cardAttr2 }
-            cardAttr3={ card.cardAttr3 }
-            cardImage={ card.cardImage }
-            cardRare={ card.cardRare }
-            cardTrunfo={ card.cardTrunfo }
-          />))}
+        <div className="main-content">
+          { cardsDeck.map((card, index) => (
+            <div key={ index }>
+              <Card
+                cardName={ card.cardName }
+                cardDescription={ card.cardDescription }
+                cardAttr1={ card.cardAttr1 }
+                cardAttr2={ card.cardAttr2 }
+                cardAttr3={ card.cardAttr3 }
+                cardImage={ card.cardImage }
+                cardRare={ card.cardRare }
+                cardTrunfo={ card.cardTrunfo }
+              />
+              <DeleteButton cardName={ card.cardName } onClick={ this.onDelete } />
+            </div>
+          ))}
         </div>
       </>
     );
