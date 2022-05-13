@@ -21,6 +21,7 @@ export default class Form extends Component {
 
     return (
       <form>
+        <h1>Adicionar nova carta</h1>
         <NameInput
           value={ cardName }
           onChange={ onInputChange }
