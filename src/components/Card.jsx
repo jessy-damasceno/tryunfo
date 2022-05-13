@@ -31,12 +31,15 @@ export default class Card extends Component {
           </div>
         </div>
         <span data-testid="rare-card" id="rare-card-span">{cardRare}</span>
-        <span
-          data-testid="trunfo-card"
-          id="trunfo-card-span"
-        >
-          {cardTrunfo === true && cardTrunfo}
-        </span>
+
+        {cardTrunfo && (
+          <span
+            data-testid="trunfo-card"
+            id="trunfo-card-span"
+          >
+            Super Trunfo
+          </span>
+        )}
       </div>
     );
   }
