@@ -29,15 +29,17 @@ class App extends React.Component {
   // onSaveButtonClick
 
   render() {
-    const { cardTrunfo } = this.state;
+    const { cardName, cardTrunfo } = this.state;
     return (
       <div className="head-content">
         <Form
           onInputChange={ this.onInputChange }
-          cardName={ this.cardName }
+          cardName={ cardName }
           cardTrunfo={ cardTrunfo }
         />
-        <Card />
+        <Card
+          cardName={ cardName }
+        />
       </div>
     );
   }

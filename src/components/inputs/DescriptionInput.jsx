@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 
 export default class DescriptionInput extends Component {
   render() {
-    const { value, onChange } = this.props;
+    const { value, onChange, name } = this.props;
 
     return (
       <div className="container">
@@ -11,7 +11,7 @@ export default class DescriptionInput extends Component {
           Descrição
           <textarea
             data-testid="description-input"
-            name="description-input"
+            name={ name }
             id="description-input"
             value={ value }
             onChange={ onChange }
@@ -24,5 +24,6 @@ export default class DescriptionInput extends Component {
 
 DescriptionInput.propTypes = {
   value: PropTypes.string.isRequired,
+  name: PropTypes.string.isRequired,
   onChange: PropTypes.func.isRequired,
 };

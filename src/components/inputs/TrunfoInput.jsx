@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 
 export default class TrunfoInput extends Component {
   render() {
-    const { checked, onChange } = this.props;
+    const { checked, onChange, name } = this.props;
 
     return (
       <div className="container">
@@ -11,7 +11,7 @@ export default class TrunfoInput extends Component {
           <input
             type="checkbox"
             data-testid="trunfo-input"
-            name="cardTrunfo"
+            name={ name }
             id="trunfo-input"
             checked={ checked }
             onChange={ onChange }
@@ -25,5 +25,6 @@ export default class TrunfoInput extends Component {
 
 TrunfoInput.propTypes = {
   checked: PropTypes.bool.isRequired,
+  name: PropTypes.string.isRequired,
   onChange: PropTypes.func.isRequired,
 };

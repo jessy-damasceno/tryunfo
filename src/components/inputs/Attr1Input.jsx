@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 
 export default class Attr1Input extends Component {
   render() {
-    const { value, onChange } = this.props;
+    const { value, onChange, name } = this.props;
 
     return (
       <div className="container">
@@ -12,7 +12,7 @@ export default class Attr1Input extends Component {
           <input
             type="number"
             data-testid="attr1-input"
-            name="attr1-input"
+            name={ name }
             id="attr1-input"
             value={ value }
             onChange={ onChange }
@@ -25,5 +25,6 @@ export default class Attr1Input extends Component {
 
 Attr1Input.propTypes = {
   value: PropTypes.string.isRequired,
+  name: PropTypes.string.isRequired,
   onChange: PropTypes.func.isRequired,
 };

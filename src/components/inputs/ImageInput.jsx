@@ -4,7 +4,7 @@ import insertLink from '../../assets/insert_link.svg';
 
 export default class ImageInput extends Component {
   render() {
-    const { value, onChange } = this.props;
+    const { value, onChange, name } = this.props;
 
     return (
       <div className="container">
@@ -15,7 +15,7 @@ export default class ImageInput extends Component {
             <input
               type="text"
               data-testid="image-input"
-              name="image-input"
+              name={ name }
               value={ value }
               onChange={ onChange }
             />
@@ -28,5 +28,6 @@ export default class ImageInput extends Component {
 
 ImageInput.propTypes = {
   value: PropTypes.string.isRequired,
+  name: PropTypes.string.isRequired,
   onChange: PropTypes.func.isRequired,
 };
