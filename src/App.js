@@ -88,7 +88,7 @@ class App extends React.Component {
       cardsDeck: cardsDeck.filter((card) => card.cardName !== name) }));
 
     this.setState(({ cardsDeck }) => {
-      if (cardsDeck.every((card) => card.cardTrunfo !== true)) {
+      if (cardsDeck.every((card) => !card.cardTrunfo)) {
         return { hasTrunfo: false };
       }
     });
