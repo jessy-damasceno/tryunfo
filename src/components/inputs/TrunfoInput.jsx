@@ -11,7 +11,7 @@ export default class TrunfoInput extends Component {
           <input
             type="checkbox"
             data-testid="trunfo-input"
-            name="trunfo-input"
+            name="cardTrunfo"
             id="trunfo-input"
             checked={ checked }
             onChange={ onChange }

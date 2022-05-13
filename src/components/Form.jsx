@@ -23,36 +23,44 @@ export default class Form extends Component {
       <form>
         <h1>Adicionar nova carta</h1>
         <NameInput
+          name="cardName"
           value={ cardName }
           onChange={ onInputChange }
         />
         <DescriptionInput
+          name="cardDescription"
           value={ cardDescription }
           onChange={ onInputChange }
         />
         <div className="atributes">
           <Attr1Input
+            name="cardAttr1"
             value={ cardAttr1 }
             onChange={ onInputChange }
           />
           <Attr2Input
+            name="cardAttr2"
             value={ cardAttr2 }
             onChange={ onInputChange }
           />
           <Attr3Input
+            name="cardAttr3"
             value={ cardAttr3 }
             onChange={ onInputChange }
           />
         </div>
         <ImageInput
+          name="cardImage"
           value={ cardImage }
           onChange={ onInputChange }
         />
         <RareInput
+          name="cardRare"
           value={ cardRare }
           onChange={ onInputChange }
         />
         <TrunfoInput
+          name="cardTrunfo"
           checked={ cardTrunfo }
           onChange={ onInputChange }
         />
