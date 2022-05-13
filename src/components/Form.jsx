@@ -17,7 +17,7 @@ export default class Form extends Component {
       cardTrunfo, hasTrunfo, isSaveButtonDisabled,
       onInputChange, onSaveButtonClick } = this.props;
 
-    // console.log(hasTrunfo);
+    console.log(hasTrunfo);
 
     return (
       <form>

@@ -18,7 +18,6 @@ export default class ImageInput extends Component {
               name={ name }
               value={ value }
               onChange={ onChange }
-              // required
             />
           </div>
         </label>

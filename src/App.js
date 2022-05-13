@@ -54,20 +54,17 @@ class App extends React.Component {
   }
 
   onSaveButtonClick = (event) => {
+    this.setState(() => ({
+      cardName: '',
+      cardDescription: '',
+      cardImage: '',
+      cardAttr1: '0',
+      cardAttr2: '0',
+      cardAttr3: '0',
+      cardRare: 'normal',
+    }
+    ));
     event.preventDefault();
-    this.setState((atual) => {
-      console.log(atual);
-      return {
-        cardName: '',
-        cardDescription: '',
-        cardImage: '',
-        cardAttr1: '0',
-        cardAttr2: '0',
-        cardAttr3: '0',
-        cardRare: 'normal',
-        cardsDeck: cardsDeck.push(atual),
-      };
-    });
   }
 
   render() {
@@ -77,6 +74,7 @@ class App extends React.Component {
       <div className="head-content">
         <Form
           onInputChange={ this.onInputChange }
+          onSaveButtonClick={ this.onSaveButtonClick }
           cardName={ cardName }
           cardTrunfo={ cardTrunfo }
           isSaveButtonDisabled={ !isSaveButtonDisabled }
