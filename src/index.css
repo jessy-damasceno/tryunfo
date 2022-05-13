@@ -11,8 +11,8 @@
 
 .head-content {
   display: flex;
-  max-width: 1200px;
-  margin: auto;
+  max-width: 100vw;
+  height: 100vh;
 }
 
 .container label, textarea {
@@ -23,18 +23,17 @@
 form {
   width: 50%;
   padding: 12px;
-  background: #FAFAFA;
-  padding: 111px 75px;
-  margin-top: 11px;
+  background: rgb(238, 233, 233);
+  padding: 6px 36px;
 }
 
 form h1 {
   font-family: 'Epilogue';
   font-style: normal;
   font-weight: 700;
-  font-size: 28px;
+  font-size: 24px;
   line-height: 29px;
-  margin-bottom: 75px;
+  margin-bottom: 24px;
 }
 
 .container {
@@ -43,13 +42,7 @@ form h1 {
 
 label {
   font-weight: 700;
-  font-size: 16px;
-  line-height: 150%;
-}
-
-.container text {
-  font-weight: 700;
-  font-size: 16px;
+  font-size: 12px;
   line-height: 150%;
 }
 
@@ -60,18 +53,18 @@ label {
 
 input, textarea, select {
   border-style: none;
-  width: 355px;
-  height: 37px;
+  width: 80%;
+  height: 34px;
   border-bottom: 1px solid #717785;
   border-radius: 2px 2px 0 0;
-  padding: 8px;
+  padding: 12px;
   outline: none;
   background: #fff;
 }
 
 textarea {
   resize: none;
-  height: 80px;
+  height: 50px;
 }
 
 .atributes {
@@ -85,20 +78,23 @@ textarea {
 }
 
 #div-image input {
-  width: calc(355px - 36px);
+  width: calc(80% - 30px);
 }
 
 #insertLink {
-  width: 36px;
+  width: 30px;
   background: #023031;
   border-radius: 4px 0 0 4px;
 }
 
 #trunfo-input {
-  width: 36px;
+  width: 30px;
 }
 
 #save-button {
+  position: absolute;
+  left: 407px;
+  top: 580px;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -116,4 +112,8 @@ textarea {
 
 #save-button:active {
   background: rgba(65, 105, 225, 0.85);
+}
+
+#rare-input {
+  height: fit-content;
 }
