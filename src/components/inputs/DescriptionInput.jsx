@@ -7,14 +7,16 @@ export default class DescriptionInput extends Component {
 
     return (
       <div className="container">
-        Descrição
-        <textarea
-          data-testid="description-input"
-          name="description-input"
-          id="description-input"
-          value={ value }
-          onChange={ onChange }
-        />
+        <label htmlFor="description-input">
+          Descrição
+          <textarea
+            data-testid="description-input"
+            name="description-input"
+            id="description-input"
+            value={ value }
+            onChange={ onChange }
+          />
+        </label>
       </div>
     );
   }

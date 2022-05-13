@@ -23,6 +23,9 @@
 form {
   width: 50%;
   padding: 12px;
+  background: #FAFAFA;
+  padding: 111px 75px;
+  margin-top: 11px;
 }
 
 form h1 {
@@ -31,6 +34,11 @@ form h1 {
   font-weight: 700;
   font-size: 28px;
   line-height: 29px;
+  margin-bottom: 75px;
+}
+
+.container {
+  margin-bottom: 19px;
 }
 
 label {
@@ -39,12 +47,26 @@ label {
   line-height: 150%;
 }
 
-textarea {
-  resize: none;
-  width: max-content;
+.container text {
+  font-weight: 700;
+  font-size: 16px;
+  line-height: 150%;
 }
 
 .Card {
   width: 50%;
   background: #023031;
+}
+
+input, textarea {
+  border-style: none;
+  width: 355px;
+  height: 37px;
+  border-bottom: 1px solid #717785;
+  border-radius: 2px 2px 0 0;
+}
+
+textarea {
+  resize: none;
+  height: 80px;
 }
