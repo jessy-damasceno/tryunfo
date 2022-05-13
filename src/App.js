@@ -2,6 +2,7 @@ import React from 'react';
 import DeleteButton from './components/buttons/DeleteButton';
 import Card from './components/Card';
 import Form from './components/Form';
+import FilterName from './components/inputs/FilterName';
 
 const INITIALSTATE = {
   cardName: '',
@@ -15,6 +16,7 @@ const INITIALSTATE = {
   hasTrunfo: false,
   isSaveButtonDisabled: false, // start false, linha 41: !isSaveButtonDisabled >> botao disabled = true
   cardsDeck: [],
+  filterName: '',
 };
 
 class App extends React.Component {
@@ -97,7 +99,7 @@ class App extends React.Component {
   render() {
     const { cardName, cardDescription, cardAttr1, cardAttr2, cardAttr3,
       cardImage, cardRare, cardTrunfo,
-      hasTrunfo, isSaveButtonDisabled, cardsDeck } = this.state;
+      hasTrunfo, isSaveButtonDisabled, cardsDeck, filterName } = this.state;
     return (
       <>
         <div className="head-content">
@@ -127,21 +129,52 @@ class App extends React.Component {
           />
         </div>
         <div className="main-content">
-          { cardsDeck.map((card, index) => (
-            <div key={ index }>
-              <Card
-                cardName={ card.cardName }
-                cardDescription={ card.cardDescription }
-                cardAttr1={ card.cardAttr1 }
-                cardAttr2={ card.cardAttr2 }
-                cardAttr3={ card.cardAttr3 }
-                cardImage={ card.cardImage }
-                cardRare={ card.cardRare }
-                cardTrunfo={ card.cardTrunfo }
-              />
-              <DeleteButton cardName={ card.cardName } onClick={ this.onDelete } />
-            </div>
-          ))}
+          <div className="filters-content">
+            <h2>Todas as cartas</h2>
+            <FilterName
+              type="text"
+              name="filterName"
+              value={ filterName }
+              onChange={ this.onInputChange }
+              placeholder="Nome da carta"
+            />
+          </div>
+          <div className="allCards">
+            { filterName === '' ? (
+              cardsDeck.map((card, index) => (
+                <div key={ index }>
+                  <Card
+                    cardName={ card.cardName }
+                    cardDescription={ card.cardDescription }
+                    cardAttr1={ card.cardAttr1 }
+                    cardAttr2={ card.cardAttr2 }
+                    cardAttr3={ card.cardAttr3 }
+                    cardImage={ card.cardImage }
+                    cardRare={ card.cardRare }
+                    cardTrunfo={ card.cardTrunfo }
+                  />
+                  <DeleteButton cardName={ card.cardName } onClick={ this.onDelete } />
+                </div>
+              ))
+            )
+              : cardsDeck.filter((card) => card.cardName
+                .toLowerCase().includes(filterName.toLocaleLowerCase()))
+                .map((card, index) => (
+                  <div key={ index }>
+                    <Card
+                      cardName={ card.cardName }
+                      cardDescription={ card.cardDescription }
+                      cardAttr1={ card.cardAttr1 }
+                      cardAttr2={ card.cardAttr2 }
+                      cardAttr3={ card.cardAttr3 }
+                      cardImage={ card.cardImage }
+                      cardRare={ card.cardRare }
+                      cardTrunfo={ card.cardTrunfo }
+                    />
+                    <DeleteButton cardName={ card.cardName } onClick={ this.onDelete } />
+                  </div>
+                ))}
+          </div>
         </div>
       </>
     );
