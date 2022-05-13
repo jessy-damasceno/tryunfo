@@ -15,6 +15,7 @@ export default class NameInput extends Component {
             id="name-input"
             value={ value }
             onChange={ onChange }
+            required
           />
         </label>
       </div>

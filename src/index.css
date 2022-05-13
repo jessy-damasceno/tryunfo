@@ -106,6 +106,10 @@ textarea {
   border-radius: 4px;
 }
 
+#save-button:disabled {
+  opacity: 0.3;
+}
+
 #save-button:hover {
   cursor: pointer;
   background: rgba(65, 105, 225, 0.9);

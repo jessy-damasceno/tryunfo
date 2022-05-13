@@ -12,7 +12,7 @@ const INITIALSTATE = {
   cardRare: '',
   cardTrunfo: false,
   hasTrunfo: false,
-  isSaveButtonDisabled: false,
+  isSaveButtonDisabled: false, // start false, linha 41: !isSaveButtonDisabled >> botao disabled = true
 };
 
 class App extends React.Component {
@@ -24,19 +24,50 @@ class App extends React.Component {
     value = type === 'checkbox' ? checked : value;
 
     this.setState({ [name]: value });
-    console.log(name, ':', value);
+
+    this.setState(({ cardName, cardDescription,
+      cardImage, cardRare, cardAttr1, cardAttr2, cardAttr3 }) => {
+      const total = 210;
+      const maxValue = 90;
+      const minValue = 0;
+      const atrValue1 = Number(cardAttr1);
+      const atrValue2 = Number(cardAttr2);
+      const atrValue3 = Number(cardAttr3);
+      console.log(atrValue1, atrValue2, atrValue3);
+
+      if (cardName.length >= 1
+      && cardDescription.length >= 1
+      && cardImage.length >= 1
+      && cardRare.length >= 1
+      && atrValue1 <= maxValue
+      && atrValue2 <= maxValue
+      && atrValue3 <= maxValue
+      && atrValue1 >= minValue
+      && atrValue2 >= minValue
+      && atrValue3 >= minValue
+      && (atrValue1 + atrValue2 + atrValue3 <= total)
+      ) {
+        return { isSaveButtonDisabled: true };
+      }
+      return { isSaveButtonDisabled: false };
+    });
   }
-  // onSaveButtonClick
+
+  onSaveButtonClick = (event) => {
+    event.preventDefault();
+  }
 
   render() {
     const { cardName, cardDescription, cardAttr1, cardAttr2, cardAttr3,
-      cardImage, cardRare, cardTrunfo } = this.state;
+      cardImage, cardRare, cardTrunfo, isSaveButtonDisabled } = this.state;
     return (
       <div className="head-content">
         <Form
           onInputChange={ this.onInputChange }
           cardName={ cardName }
           cardTrunfo={ cardTrunfo }
+          isSaveButtonDisabled={ !isSaveButtonDisabled }
+
         />
         <Card
           cardName={ cardName }

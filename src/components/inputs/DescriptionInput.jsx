@@ -15,6 +15,7 @@ export default class DescriptionInput extends Component {
             id="description-input"
             value={ value }
             onChange={ onChange }
+            required
           />
         </label>
       </div>
