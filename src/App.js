@@ -54,22 +54,36 @@ class App extends React.Component {
   }
 
   onSaveButtonClick = (event) => {
+    const { cardTrunfo: trunfo } = this.state;
     event.preventDefault();
-    this.setState(() => ({
+
+    this.setState(({ cardName, cardDescription,
+      cardImage, cardRare, cardAttr1, cardAttr2, cardAttr3, cardTrunfo, cardsDeck }) => ({
       cardName: '',
       cardDescription: '',
       cardImage: '',
-      cardAttr1: 0,
-      cardAttr2: 0,
-      cardAttr3: 0,
+      cardAttr1: '0',
+      cardAttr2: '0',
+      cardAttr3: '0',
       cardRare: 'normal',
+      cardsDeck: [...cardsDeck, {
+        cardName,
+        cardDescription,
+        cardAttr1,
+        cardAttr2,
+        cardAttr3,
+        cardImage,
+        cardRare,
+        cardTrunfo,
+      }],
     }
     ));
-  }
+    if (trunfo) { this.setState({ hasTrunfo: true }); }
+  };
 
   render() {
     const { cardName, cardDescription, cardAttr1, cardAttr2, cardAttr3,
-      cardImage, cardRare, cardTrunfo, isSaveButtonDisabled } = this.state;
+      cardImage, cardRare, cardTrunfo, hasTrunfo, isSaveButtonDisabled } = this.state;
     return (
       <div className="head-content">
         <Form
@@ -84,7 +98,7 @@ class App extends React.Component {
           cardAttr1={ cardAttr1 }
           cardAttr2={ cardAttr2 }
           cardAttr3={ cardAttr3 }
-
+          hasTrunfo={ hasTrunfo }
         />
         <Card
           cardName={ cardName }

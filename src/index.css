@@ -11,9 +11,9 @@
 }
 
 .head-content {
+  position: relative;
   display: flex;
   max-width: 100vw;
-  height: 100vh;
 }
 
 .container label, textarea {
@@ -23,9 +23,11 @@
 
 form {
   width: 50%;
+  height: 100%;
   padding: 12px;
   background: rgb(238, 233, 233);
   padding: 6px 36px;
+  position: relative;
 }
 
 form h1 {
@@ -93,9 +95,6 @@ textarea {
 }
 
 #save-button {
-  position: absolute;
-  left: 407px;
-  top: 580px;
   display: flex;
   align-items: center;
   justify-content: center;

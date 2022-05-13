@@ -59,11 +59,14 @@ export default class Form extends Component {
           value={ cardRare }
           onChange={ onInputChange }
         />
-        <TrunfoInput
-          name="cardTrunfo"
-          checked={ cardTrunfo }
-          onChange={ onInputChange }
-        />
+        {!hasTrunfo ? (
+          <TrunfoInput
+            name="cardTrunfo"
+            checked={ cardTrunfo }
+            onChange={ onInputChange }
+          />
+        ) : <span>Você já tem um Super Trunfo em seu baralho</span>}
+
         <SaveButton
           disabled={ isSaveButtonDisabled }
           onClick={ onSaveButtonClick }
