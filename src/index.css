@@ -118,3 +118,7 @@ textarea {
 #rare-input {
   height: fit-content;
 }
+
+#image-card {
+  width: 100px
+}

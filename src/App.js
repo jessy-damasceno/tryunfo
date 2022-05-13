@@ -29,7 +29,8 @@ class App extends React.Component {
   // onSaveButtonClick
 
   render() {
-    const { cardName, cardTrunfo } = this.state;
+    const { cardName, cardDescription, cardAttr1, cardAttr2, cardAttr3,
+      cardImage, cardRare, cardTrunfo } = this.state;
     return (
       <div className="head-content">
         <Form
@@ -39,6 +40,13 @@ class App extends React.Component {
         />
         <Card
           cardName={ cardName }
+          cardDescription={ cardDescription }
+          cardAttr1={ cardAttr1 }
+          cardAttr2={ cardAttr2 }
+          cardAttr3={ cardAttr3 }
+          cardImage={ cardImage }
+          cardRare={ cardRare }
+          cardTrunfo={ cardTrunfo }
         />
       </div>
     );

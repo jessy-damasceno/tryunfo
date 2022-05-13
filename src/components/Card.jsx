@@ -13,7 +13,12 @@ export default class Card extends Component {
           <div className="Card-title-text">
             <span data-testid="name-card">{cardName}</span>
           </div>
-          <img data-testid="image-card" src={ cardImage } alt={ cardName } />
+          <img
+            id="image-card"
+            data-testid="image-card"
+            src={ cardImage }
+            alt={ cardName }
+          />
         </div>
         <p data-testid="description-card">{cardDescription}</p>
         <div className="Card-atributes">
