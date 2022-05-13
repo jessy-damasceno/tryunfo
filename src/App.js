@@ -5,14 +5,15 @@ import Form from './components/Form';
 const INITIALSTATE = {
   cardName: '',
   cardDescription: '',
-  cardAttr1: '',
-  cardAttr2: '',
-  cardAttr3: '',
+  cardAttr1: '0',
+  cardAttr2: '0',
+  cardAttr3: '0',
   cardImage: '',
-  cardRare: '',
+  cardRare: 'normal',
   cardTrunfo: false,
   hasTrunfo: false,
   isSaveButtonDisabled: false, // start false, linha 41: !isSaveButtonDisabled >> botao disabled = true
+  cardsDeck: [],
 };
 
 class App extends React.Component {
@@ -33,7 +34,6 @@ class App extends React.Component {
       const atrValue1 = Number(cardAttr1);
       const atrValue2 = Number(cardAttr2);
       const atrValue3 = Number(cardAttr3);
-      console.log(atrValue1, atrValue2, atrValue3);
 
       if (cardName.length >= 1
       && cardDescription.length >= 1
@@ -55,6 +55,19 @@ class App extends React.Component {
 
   onSaveButtonClick = (event) => {
     event.preventDefault();
+    this.setState((atual) => {
+      console.log(atual);
+      return {
+        cardName: '',
+        cardDescription: '',
+        cardImage: '',
+        cardAttr1: '0',
+        cardAttr2: '0',
+        cardAttr3: '0',
+        cardRare: 'normal',
+        cardsDeck: cardsDeck.push(atual),
+      };
+    });
   }
 
   render() {
@@ -67,6 +80,9 @@ class App extends React.Component {
           cardName={ cardName }
           cardTrunfo={ cardTrunfo }
           isSaveButtonDisabled={ !isSaveButtonDisabled }
+          cardAttr1={ cardAttr1 }
+          cardAttr2={ cardAttr2 }
+          cardAttr3={ cardAttr3 }
 
         />
         <Card

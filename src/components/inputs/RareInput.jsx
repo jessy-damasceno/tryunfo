@@ -16,8 +16,7 @@ export default class RareInput extends Component {
             id="rare-input"
             value={ value }
             onChange={ onChange }
-            required
-            // onClick={ onChange }
+            // required
           >
             <option value="normal">normal</option>
             <option value="raro">raro</option>
