@@ -8,7 +8,7 @@ export default class Attr3Input extends Component {
     return (
       <div className="container">
         <label htmlFor="attr3-input">
-          Attr 03
+          Atributo - 03
           <input
             type="number"
             data-testid="attr3-input"

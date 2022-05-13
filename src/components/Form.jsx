@@ -30,18 +30,20 @@ export default class Form extends Component {
           value={ cardDescription }
           onChange={ onInputChange }
         />
-        <Attr1Input
-          value={ cardAttr1 }
-          onChange={ onInputChange }
-        />
-        <Attr2Input
-          value={ cardAttr2 }
-          onChange={ onInputChange }
-        />
-        <Attr3Input
-          value={ cardAttr3 }
-          onChange={ onInputChange }
-        />
+        <div className="atributes">
+          <Attr1Input
+            value={ cardAttr1 }
+            onChange={ onInputChange }
+          />
+          <Attr2Input
+            value={ cardAttr2 }
+            onChange={ onInputChange }
+          />
+          <Attr3Input
+            value={ cardAttr3 }
+            onChange={ onInputChange }
+          />
+        </div>
         <ImageInput
           value={ cardImage }
           onChange={ onInputChange }

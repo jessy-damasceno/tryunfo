@@ -58,15 +58,38 @@ label {
   background: #023031;
 }
 
-input, textarea {
+input, textarea, select {
   border-style: none;
   width: 355px;
   height: 37px;
   border-bottom: 1px solid #717785;
   border-radius: 2px 2px 0 0;
+  padding: 8px;
+  outline: none;
+  background: #fff;
 }
 
 textarea {
   resize: none;
   height: 80px;
+}
+
+.atributes {
+  display: flex;
+  flex-direction: column;
+}
+
+#div-image {
+  display: flex;
+  align-items: stretch;
+}
+
+#div-image input {
+  width: calc(355px - 36px);
+}
+
+#insertLink {
+  width: 36px;
+  background: #023031;
+  border-radius: 4px 0 0 4px;
 }

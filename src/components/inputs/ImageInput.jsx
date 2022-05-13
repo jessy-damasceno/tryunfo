@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
+import insertLink from '../../assets/insert_link.svg';
 
 export default class ImageInput extends Component {
   render() {
@@ -9,13 +10,16 @@ export default class ImageInput extends Component {
       <div className="container">
         <label htmlFor="image-input">
           Imagem
-          <input
-            type="text"
-            data-testid="image-input"
-            name="image-input"
-            value={ value }
-            onChange={ onChange }
-          />
+          <div id="div-image">
+            <img id="insertLink" src={ insertLink } alt="" />
+            <input
+              type="text"
+              data-testid="image-input"
+              name="image-input"
+              value={ value }
+              onChange={ onChange }
+            />
+          </div>
         </label>
       </div>
     );
