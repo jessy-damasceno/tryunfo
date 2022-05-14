@@ -115,7 +115,8 @@ class App extends React.Component {
       filteredCards = filteredCards.filter((card) => card.cardRare === filterRare);
     }
     if (filterName.length > 0) {
-      filteredCards = filteredCards.filter((crd) => crd.cardName.includes(filterName));
+      filteredCards = filteredCards
+        .filter((crd) => crd.cardName.toLowerCase().includes(filterName.toLowerCase()));
     }
 
     return (
@@ -135,16 +136,18 @@ class App extends React.Component {
             cardAttr3={ cardAttr3 }
             hasTrunfo={ hasTrunfo }
           />
-          <Card
-            cardName={ cardName }
-            cardDescription={ cardDescription }
-            cardAttr1={ cardAttr1 }
-            cardAttr2={ cardAttr2 }
-            cardAttr3={ cardAttr3 }
-            cardImage={ cardImage }
-            cardRare={ cardRare }
-            cardTrunfo={ cardTrunfo }
-          />
+          <div className="preview-container">
+            <Card
+              cardName={ cardName }
+              cardDescription={ cardDescription }
+              cardAttr1={ cardAttr1 }
+              cardAttr2={ cardAttr2 }
+              cardAttr3={ cardAttr3 }
+              cardImage={ cardImage }
+              cardRare={ cardRare }
+              cardTrunfo={ cardTrunfo }
+            />
+          </div>
         </div>
         <div className="main-content">
           <div className="filters-content">

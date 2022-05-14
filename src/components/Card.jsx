@@ -11,26 +11,30 @@ export default class Card extends Component {
       <div className="Card">
         <div className="Card-title">
           <div className="Card-title-text">
-            <span data-testid="name-card">{cardName}</span>
+            <h3 data-testid="name-card">{cardName}</h3>
           </div>
-          <img
-            id="image-card"
-            data-testid="image-card"
-            src={ cardImage }
-            alt={ cardName }
-          />
+          <div id="image">
+            <img
+              id="image-card"
+              data-testid="image-card"
+              src={ cardImage }
+              alt={ cardName }
+            />
+          </div>
         </div>
-        <p data-testid="description-card">{cardDescription}</p>
+        <div id="description">
+          <p data-testid="description-card">{cardDescription}</p>
+        </div>
         <div className="Card-atributes">
-          <div className="atribute-1">
+          <div className="atribute">
             <span>Attr01....................................</span>
             <span data-testid="attr1-card">{cardAttr1}</span>
           </div>
-          <div className="atribute-2">
+          <div className="atribute">
             <span>Attr02....................................</span>
             <span data-testid="attr2-card">{cardAttr2}</span>
           </div>
-          <div className="atribute-3">
+          <div className="atribute">
             <span>Attr03....................................</span>
             <span data-testid="attr3-card">{cardAttr3}</span>
           </div>
