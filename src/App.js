@@ -4,6 +4,7 @@ import Card from './components/Card';
 import Form from './components/Form';
 import FilterName from './components/inputs/FilterName';
 import FilterRare from './components/inputs/FilterRare';
+import TrunfoFilter from './components/inputs/TrunfoFilter';
 
 const INITIALSTATE = {
   cardName: '',
@@ -19,6 +20,7 @@ const INITIALSTATE = {
   cardsDeck: [],
   filterName: '',
   filterRare: 'todas',
+  trunfoFilter: false,
 };
 
 class App extends React.Component {
@@ -59,7 +61,7 @@ class App extends React.Component {
   }
 
   onSaveButtonClick = (event) => {
-    const { cardTrunfo: trunfo } = this.state;
+    const { cardTrunfo: trunfo, hasTrunfo } = this.state;
     event.preventDefault();
 
     this.setState(({ cardName, cardDescription,
@@ -83,7 +85,7 @@ class App extends React.Component {
       }],
     }
     ));
-    if (trunfo) { this.setState({ hasTrunfo: true }); }
+    if (!hasTrunfo && trunfo) { this.setState({ hasTrunfo: true, cardTrunfo: false }); }
   };
 
   onDelete = (event) => {
@@ -101,16 +103,19 @@ class App extends React.Component {
   render() {
     const { cardName, cardDescription, cardAttr1, cardAttr2, cardAttr3,
       cardImage, cardRare, cardTrunfo,
-      hasTrunfo, isSaveButtonDisabled, cardsDeck, filterName, filterRare } = this.state;
+      hasTrunfo, isSaveButtonDisabled, cardsDeck,
+      filterName, filterRare, trunfoFilter } = this.state;
 
     let filteredCards = cardsDeck;
 
+    if (trunfoFilter === true) {
+      filteredCards = filteredCards.filter((card) => card.cardTrunfo === true);
+    }
     if (filterRare !== 'todas') {
       filteredCards = filteredCards.filter((card) => card.cardRare === filterRare);
     }
-
     if (filterName.length > 0) {
-      filteredCards = filteredCards.filter((card) => card.cardName.includes(filterName));
+      filteredCards = filteredCards.filter((crd) => crd.cardName.includes(filterName));
     }
 
     return (
@@ -150,12 +155,19 @@ class App extends React.Component {
               value={ filterName }
               onChange={ this.onInputChange }
               placeholder="Nome da carta"
+              disabled={ trunfoFilter }
             />
             <FilterRare
               name="filterRare"
               value={ filterRare }
               onChange={ this.onInputChange }
               placeholder="Raridade"
+              disabled={ trunfoFilter }
+            />
+            <TrunfoFilter
+              name="trunfoFilter"
+              checked={ trunfoFilter }
+              onChange={ this.onInputChange }
             />
           </div>
           <div className="allCards">
