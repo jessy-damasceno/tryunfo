@@ -4,6 +4,9 @@ import PropTypes from 'prop-types';
 export default class Attr2Input extends Component {
   render() {
     const { value, onChange, name } = this.props;
+    const max = 90;
+    const min = 0;
+    const isValidAttribute = Boolean(value > max || value < min);
 
     return (
       <div className="container">
@@ -17,6 +20,9 @@ export default class Attr2Input extends Component {
             value={ value }
             onChange={ onChange }
           />
+          <legend>
+            {isValidAttribute && 'Valor de atributo inválido'}
+          </legend>
         </label>
       </div>
     );

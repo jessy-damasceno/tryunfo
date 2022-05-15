@@ -14,6 +14,7 @@
   position: relative;
   display: flex;
   max-width: 100vw;
+  max-height: 100vh;
 }
 
 .container label, textarea {
@@ -40,13 +41,14 @@ form h1 {
 }
 
 .container {
-  margin-bottom: 19px;
+  margin-bottom: 8px;
+  height: 65px;
 }
 
 label {
   font-weight: 700;
   font-size: 12px;
-  line-height: 150%;
+  line-height: 120%;
 }
 
 .preview-container {
@@ -268,6 +270,10 @@ textarea {
   padding-left: 12px;
 }
 
+#name-filter:disabled, #rare-filter:disabled {
+  opacity: 0.7;
+}
+
 .deck_card {
   display: flex;
   flex-direction: column;
@@ -302,4 +308,11 @@ textarea {
 .allCards {
   display: flex;
   flex-wrap: wrap;
+}
+
+legend {
+  font-style: italic;
+  font-size: 12px;
+  margin-top: 2px;
+  text-align: center;
 }

@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 
 export default class Attr3Input extends Component {
   render() {
-    const { value, onChange, name } = this.props;
+    const { value, onChange, name, remainingPoints } = this.props;
 
     return (
       <div className="container">
@@ -17,6 +17,11 @@ export default class Attr3Input extends Component {
             value={ value }
             onChange={ onChange }
           />
+          <legend>
+            {remainingPoints >= 0
+              ? `Pontos de atributos restantes: ${remainingPoints}`
+              : 'Excedeu número máximo de atributos (210 pts)'}
+          </legend>
         </label>
       </div>
     );
@@ -27,4 +32,5 @@ Attr3Input.propTypes = {
   value: PropTypes.string.isRequired,
   name: PropTypes.string.isRequired,
   onChange: PropTypes.func.isRequired,
+  remainingPoints: PropTypes.number.isRequired,
 };

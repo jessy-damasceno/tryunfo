@@ -17,9 +17,13 @@ export default class Form extends Component {
       cardTrunfo, hasTrunfo, isSaveButtonDisabled,
       onInputChange, onSaveButtonClick } = this.props;
 
+    const totalPoints = 210;
+    const remainingPoints = totalPoints
+      - (Number(cardAttr1) + Number(cardAttr2) + Number(cardAttr3));
+
     return (
       <form>
-        <h1>Adicionar nova carta</h1>
+        {/* <h1>Adicionar nova carta</h1> */}
         <NameInput
           name="cardName"
           value={ cardName }
@@ -45,6 +49,7 @@ export default class Form extends Component {
             name="cardAttr3"
             value={ cardAttr3 }
             onChange={ onInputChange }
+            remainingPoints={ remainingPoints }
           />
         </div>
         <ImageInput
