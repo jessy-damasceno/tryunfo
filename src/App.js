@@ -152,6 +152,7 @@ class App extends React.Component {
         <div className="main-content">
           <div className="filters-content">
             <h2>Todas as cartas</h2>
+            <h3>Filtros de busca</h3>
             <FilterName
               type="text"
               name="filterName"
@@ -176,7 +177,7 @@ class App extends React.Component {
           <div className="allCards">
             {
               filteredCards.map((card, index) => (
-                <div key={ index }>
+                <div key={ index } className="deck_card">
                   <Card
                     cardName={ card.cardName }
                     cardDescription={ card.cardDescription }

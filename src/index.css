@@ -58,12 +58,18 @@ label {
 }
 
 .Card {
+  display: flex;
+  position: relative;
+  flex-direction: column;
   background: #036B52;
   border-radius: 10px;
   border: 10px solid #fff;
   box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.25);
   padding: 10px;
-  width: 300px
+  width: 300px;
+  height: 450px;
+  transform: scale(0.8);
+  z-index: 1;
 }
 
 .Card:hover {
@@ -125,6 +131,7 @@ label {
   background-color: white;
   padding: 12px;
   border-radius: 2px;
+  margin-bottom: 20px;
 }
 
 .atribute {
@@ -136,7 +143,7 @@ label {
 }
 
 .atribute span {
-  color: ##3D495C;
+  color: #3D495C;
 }
 
 .Card p {
@@ -217,5 +224,67 @@ textarea {
 }
 
 #image-card {
-  width: 100px
+  width: 100px;
+}
+
+.main-content {
+  display: flex;
+  padding: 30px;
+  background: rgb(238, 233, 233);
+  border: 1px solid rgba(133, 133, 133, 0.1);
+  margin: 8px;
+}
+
+.filters-content {
+  display: flex;
+  flex-direction: column;
+  height: 80vh;
+  width: 30%;
+  gap: 20px;
+  padding: 15px;
+}
+
+.filters-content h2 {
+  margin-bottom: 40px;
+}
+
+#name-filter, #rare-filter {
+  padding: 0px;
+  padding-left: 12px;
+}
+
+.deck_card {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center
+}
+
+.deck_card > button {
+  padding: 8px 30px;
+}
+
+#trunfo-filter {
+  width: 20px;
+  height: 15px;
+}
+
+#rare-card-span {
+  text-align: center;
+  color: #023031;
+  font-weight: 700;
+  font-size: 20px;
+}
+
+#trunfo-card-img {
+  position: fixed;
+  width: 90px;
+  left: 180px;
+  top: 10px;
+  transform: rotate(-9deg);
+}
+
+.allCards {
+  display: flex;
+  flex-wrap: wrap;
 }
