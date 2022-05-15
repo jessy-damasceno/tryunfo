@@ -92,12 +92,11 @@ label {
 #image {
   display: flex;
   justify-content: center;
-  align-items: center;
   height: 150px;
   width: 100%;
-  background: white;
-  padding: 20px;
-  opacity: 0.9;
+  background: #fff;
+  padding: 4px;
+  opacity: 1;
 }
 
 #image-card {
@@ -135,6 +134,8 @@ label {
 }
 
 .atribute {
+  display: flex;
+  justify-content: space-around;
   margin: 8px;
   font-style: normal;
   font-weight: 600;
@@ -142,8 +143,22 @@ label {
   line-height: 150%;
 }
 
+.atribute_value {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color:#023031;
+  width: 45px;
+  height: 28px;
+  border-radius: 0 12px 12px 0;
+}
+
 .atribute span {
   color: #3D495C;
+}
+
+.atribute_value span {
+  color: #fff;
 }
 
 .Card p {
@@ -224,7 +239,8 @@ textarea {
 }
 
 #image-card {
-  width: 100px;
+  width: 100%;
+  object-fit: cover;
 }
 
 .main-content {

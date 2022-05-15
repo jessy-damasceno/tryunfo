@@ -28,16 +28,22 @@ export default class Card extends Component {
         </div>
         <div className="Card-atributes">
           <div className="atribute">
-            <span>Attr01....................................</span>
-            <span data-testid="attr1-card">{cardAttr1}</span>
+            <span>ATK...............................</span>
+            <div className="atribute_value">
+              <span data-testid="attr1-card">{cardAttr1}</span>
+            </div>
           </div>
           <div className="atribute">
-            <span>Attr02....................................</span>
-            <span data-testid="attr2-card">{cardAttr2}</span>
+            <span>DEF...............................</span>
+            <div className="atribute_value">
+              <span data-testid="attr2-card">{cardAttr2}</span>
+            </div>
           </div>
           <div className="atribute">
-            <span>Attr03....................................</span>
-            <span data-testid="attr3-card">{cardAttr3}</span>
+            <span>HP.................................</span>
+            <div className="atribute_value">
+              <span data-testid="attr3-card">{cardAttr3}</span>
+            </div>
           </div>
         </div>
         <span data-testid="rare-card" id="rare-card-span">{cardRare}</span>
