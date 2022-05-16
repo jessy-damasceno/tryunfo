@@ -250,6 +250,7 @@ textarea {
   background: rgb(238, 233, 233);
   border: 1px solid rgba(133, 133, 133, 0.1);
   margin: 8px;
+  min-height: 98vh;
 }
 
 .filters-content {
