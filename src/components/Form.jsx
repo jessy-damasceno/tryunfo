@@ -23,7 +23,6 @@ export default class Form extends Component {
 
     return (
       <form>
-        {/* <h1>Adicionar nova carta</h1> */}
         <NameInput
           name="cardName"
           value={ cardName }
@@ -68,7 +67,11 @@ export default class Form extends Component {
             checked={ cardTrunfo }
             onChange={ onInputChange }
           />
-        ) : <span>Você já tem um Super Trunfo em seu baralho</span>}
+        ) : (
+          <div id="has_trunfo">
+            <span>Você já tem um Super Trunfo em seu baralho</span>
+          </div>
+        )}
 
         <SaveButton
           disabled={ isSaveButtonDisabled }
